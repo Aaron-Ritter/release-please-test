@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/Aaron-Ritter/release-please-test/compare/v0.3.0...v0.4.0) (2025-01-14)
+
+
+### Features
+
+* configure prerelease ([3a87f54](https://github.com/Aaron-Ritter/release-please-test/commit/3a87f541d862b1f6433db5dabd76150faaf78ff0))
+
 ## [0.3.0](https://github.com/Aaron-Ritter/release-please-test/compare/v0.2.0...v0.3.0) (2025-01-14)
 
 
