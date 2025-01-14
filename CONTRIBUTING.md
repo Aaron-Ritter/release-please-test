@@ -117,6 +117,8 @@ The `pre-release.yml` workflow will automatically create a GitHub release, build
 
 TODO
 
+Minor re-versioning test
+
 ## Release Process
 
 The release process is as follows:
