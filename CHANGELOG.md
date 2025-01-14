@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/Aaron-Ritter/release-please-test/compare/v0.4.2...v0.5.0) (2025-01-14)
+
+
+### Features
+
+* re-versioning test minor ([bafe213](https://github.com/Aaron-Ritter/release-please-test/commit/bafe21390af654ab85ece2654093c991aa6c206f))
+
 ## [0.4.2](https://github.com/Aaron-Ritter/release-please-test/compare/v0.4.1...v0.4.2) (2025-01-14)
 
 
