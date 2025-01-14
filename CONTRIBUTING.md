@@ -115,7 +115,6 @@ The `pre-release.yml` workflow will automatically create a GitHub release, build
 
 ### Release-Please Automation
 
-Feat Test
 TODO
 
 ## Release Process
