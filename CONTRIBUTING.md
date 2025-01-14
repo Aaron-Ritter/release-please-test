@@ -113,6 +113,10 @@ The pre-release process is as follows:
 
 The `pre-release.yml` workflow will automatically create a GitHub release, build the library, and add the artifact to GitHub.
 
+### Release-Please Automation
+
+Feat Test
+
 ## Release Process
 
 The release process is as follows:
