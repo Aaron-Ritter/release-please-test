@@ -28,9 +28,17 @@ jobs:
           config-file: release-please-config.json
           # optional. customize path to .release-please-manifest.json
           manifest-file: .release-please-manifest.json
+
+      - name: Print release outputs for debugging
+        continue-on-error: true
+        run: |
+          echo "Release outputs:"
+          echo "${{ toJson(steps.release.outputs) }}"
+
       - name: checkout
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
+
       - name: tag versions
         if: ${{ steps.release.outputs.release_created }}
         run: |
