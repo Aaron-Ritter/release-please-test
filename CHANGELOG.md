@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1](https://github.com/Aaron-Ritter/release-please-test/compare/v0.4.0...v0.4.1) (2025-01-14)
+
+
+### Bug Fixes
+
+* configure prerelease to false ([6d029ae](https://github.com/Aaron-Ritter/release-please-test/commit/6d029ae941192c8227a8f0bbbf6bf47222833872))
+* release-please fix test ([3ada7ba](https://github.com/Aaron-Ritter/release-please-test/commit/3ada7ba8affaabd9325048170434cd0fc1d88d85))
+
 ## [0.4.0](https://github.com/Aaron-Ritter/release-please-test/compare/v0.3.0...v0.4.0) (2025-01-14)
 
 
