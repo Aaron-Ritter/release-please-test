@@ -25,7 +25,7 @@ jobs:
     needs: e2e-test
 
     steps:
-      - name: release
+      - name: Release Please
         id: release
         uses: googleapis/release-please-action@v4
         with:
@@ -37,9 +37,9 @@ jobs:
           # for more options
           release-type: simple
           # optional. customize path to release-please-config-release.json
-          config-file: .github/release-please-config-release.json
+          config-file: ".github/release-please-config-release.json"
           # optional. customize path to .release-please-manifest-prerelease.json
-          manifest-file: .github/.release-please-manifest-release.json
+          manifest-file: ".github/.release-please-manifest-release.json"
 
       - name: Print release outputs for debugging
         continue-on-error: true
