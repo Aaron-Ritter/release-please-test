@@ -14,15 +14,49 @@ permissions:
 name: Release
 
 jobs:
+  prerelease:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+
+    steps:
+      - name: Release Please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          # this assumes that you have created a personal access token
+          # (PAT) and configured it as a GitHub action secret named
+          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # this is a built-in strategy in release-please, see "Action Inputs"
+          # for more options
+          release-type: simple
+          # optional. customize path to release-please-config-prerelease.json
+          config-file: ".github/release-please-config-prerelease.json"
+          # optional. customize path to .release-please-manifest-prerelease.json
+          manifest-file: ".github/.release-please-manifest-prerelease.json"
+
+      - name: Print release outputs for debugging
+        continue-on-error: true
+        run: |
+          echo "Release outputs:"
+          echo "${{ toJson(steps.release.outputs) }}"
+
   e2e-test:
     uses: ./.github/workflows/e2e-test-fusionauth-matrix-ios-latest.yml
+    if: ${{ needs.prerelease.outputs.releases_created == 'true' }}
+    needs: prerelease
 
   release:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Requires the staging_profile_id and e2e-test job
-    needs: e2e-test
+    if: ${{ needs.prerelease.outputs.releases_created == 'true' && !contains(needs.prerelease.outputs.tag_name, 'beta') }}
+    needs: [e2e-test, prerelease]
 
     steps:
       - name: Release Please
