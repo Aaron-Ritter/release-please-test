@@ -2,8 +2,9 @@
   "bump-minor-pre-major": false,
   "bump-patch-for-minor-pre-major": false,
   "draft": false,
-  "prerelease-type": "beta",
   "prerelease": true,
+  "prerelease-type": "beta",
+  "versioning": "prerelease",
   "changelog-path": "CHANGELOG.md",
   "packages": {
     ".": {
