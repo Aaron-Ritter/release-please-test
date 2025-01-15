@@ -7,22 +7,13 @@ permissions:
   contents: write
   pull-requests: write
   repository-projects: read
-  # only required for workflows in private repositories
-  actions: read
-  security-events: write
 
 name: Prerelease
 
 jobs:
-  e2e-test:
-    uses: ./.github/workflows/e2e-test-fusionauth-matrix-ios-latest.yml
-
   release:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Requires the staging_profile_id and e2e-test job
-    needs: e2e-test
 
     steps:
       - name: release
@@ -36,8 +27,8 @@ jobs:
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
           release-type: simple
-          # optional. customize path to release-please-config.json
-          config-file: release-please-config.json
+          # optional. customize path to release-please-config-prerelease.json
+          config-file: release-please-config-prerelease.json
           # optional. customize path to .release-please-manifest.json
           manifest-file: .release-please-manifest.json
 
@@ -46,22 +37,3 @@ jobs:
         run: |
           echo "Release outputs:"
           echo "${{ toJson(steps.release.outputs) }}"
-
-      - name: checkout
-        if: ${{ steps.release.outputs.release_created }}
-        uses: actions/checkout@v4
-
-      - name: tag versions
-        if: ${{ steps.release.outputs.release_created }}
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add gh-token "https://${{ secrets.RELEASE_PLEASE }}@github.com/Aaron-Ritter/release-please-test.git"
-          git tag -d v${{ steps.release.outputs.major }} || true
-          git tag -d v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
-          git push origin :v${{ steps.release.outputs.major }} || true
-          git push origin :v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} || true
-          git tag -a v${{ steps.release.outputs.major }} -m "Release v${{ steps.release.outputs.major }}"
-          git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
-          git push origin v${{ steps.release.outputs.major }}
-          git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}

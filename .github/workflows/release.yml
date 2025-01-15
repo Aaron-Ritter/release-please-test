@@ -36,8 +36,8 @@ jobs:
           # this is a built-in strategy in release-please, see "Action Inputs"
           # for more options
           release-type: simple
-          # optional. customize path to release-please-config.json
-          config-file: release-please-config.json
+          # optional. customize path to release-please-config-release.json
+          config-file: release-please-config-release.json
           # optional. customize path to .release-please-manifest.json
           manifest-file: .release-please-manifest.json
 
