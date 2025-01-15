@@ -104,14 +104,14 @@ end::forDocSiteContributing[]
 <!--
 tag::forDocSiteRelease[]
 -->
-The release proceeds through three sequential steps: [Pre-Release Process](#pre-release-process), [Release Process](#release-process) and [Quickstart Release Process](#quickstart-release-process). Where [Pre-Release Process](#pre-release-process) gets repeated untill a stable release is possible.
+The release proceeds through three sequential steps: [Prerelease Process](#pre-release-process), [Release Process](#release-process) and [Quickstart Release Process](#quickstart-release-process). Where [Pre-Release Process](#pre-release-process) gets repeated untill a stable release is possible.
 
-## Pre-Release Process
+## Prerelease Process
 
-The pre-release process is as follows:
+The prerelease process is as follows:
 - TODO
 
-The `pre-release.yml` workflow will automatically create a GitHub release, build the library, and add the artifact to GitHub.
+The `prerelease.yml` workflow will automatically create a GitHub release, build the library, and add the artifact to GitHub.
 
 ### Release-Please Automation
 
