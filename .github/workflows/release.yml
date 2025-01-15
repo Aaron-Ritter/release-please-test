@@ -11,6 +11,7 @@ permissions:
   repository-projects: read
   # only required for workflows in private repositories
   actions: read
+  security-events: write
 
 name: release-please
 
