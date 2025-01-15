@@ -11,7 +11,7 @@ permissions:
   actions: read
   security-events: write
 
-name: release-please
+name: pre-release
 
 jobs:
   e2e-test:
