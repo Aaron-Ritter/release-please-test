@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.4](https://github.com/Aaron-Ritter/release-please-test/compare/v0.5.3...v0.5.4) (2025-01-15)
+
+
+### Bug Fixes
+
+* test versioning ([3cc36de](https://github.com/Aaron-Ritter/release-please-test/commit/3cc36defa074cba7db10ee3b1c2cd48b36653ba8))
+
 ## [0.5.3](https://github.com/Aaron-Ritter/release-please-test/compare/v0.5.2...v0.5.3) (2025-01-15)
 
 
