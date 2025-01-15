@@ -13,6 +13,13 @@ on:
   # Triggers the workflow on push request events but only for tag versions
   workflow_call:
 
+permissions:
+  # required for all workflows
+  security-events: write
+  # only required for workflows in private repositories
+  actions: read
+  contents: read
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "e2e-test"

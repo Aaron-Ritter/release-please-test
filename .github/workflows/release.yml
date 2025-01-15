@@ -9,6 +9,8 @@ permissions:
   contents: write
   pull-requests: write
   repository-projects: read
+  # only required for workflows in private repositories
+  actions: read
 
 name: release-please
 
