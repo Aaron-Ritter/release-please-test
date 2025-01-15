@@ -2,6 +2,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+-*'
 
 permissions:
   contents: write
@@ -15,12 +17,7 @@ jobs:
     uses: ./.github/workflows/e2e-test-fusionauth-matrix-ios-latest.yml
 
   release:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Requires the staging_profile_id and e2e-test job
-    needs: e2e-test
-
     steps:
       - name: release
         id: release
