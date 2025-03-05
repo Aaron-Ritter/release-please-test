@@ -136,7 +136,7 @@ tag::forDocSiteUsage[]
 To start the OAuth 2.0 Authorization Code Grant, you can use the `oauth()` function on the `AuthorizationManager` to
 retrieve the `OAuthAuthorizationService`:
 
-```swift
+```woooooop
 do {
     try await AuthorizationManager
         .oauth()
@@ -166,7 +166,7 @@ do {
 
 To call your API with an access token, you can use the `AuthorizationManager` to retrieve a valid access token:
 
-```swift
+```dsl
 let accessToken = AuthorizationManager.oauth().freshAccessToken()
 ```
 
